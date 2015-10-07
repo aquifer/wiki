@@ -17,5 +17,3 @@ Updating dependencies, applying patches, installing and updating libraries, and 
 
 ## Ensured long-term stability
 When using a Drush make workflow, every time you update a dependency version, or add a patch, or remove something from the codebase, the site is reconstructed with the new dependency settings. This means that if a dependency introduces problem, or a patch no longer applies with an update, the build will fail before critical problems are introduced into the site.
-
-# Why use Aquifer?
