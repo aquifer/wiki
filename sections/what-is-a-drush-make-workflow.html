@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="1" data-basepath=".." data-revision="Wed Oct 07 2015 17:17:10 GMT-0500 (CDT)">
+    <div class="book" data-level="1" data-basepath=".." data-revision="Wed Oct 07 2015 17:40:03 GMT-0500 (CDT)">
     
 
 <div class="book-summary">
@@ -209,15 +209,15 @@
                     
                         <h1 id="what-is-a-drush-make-workflow">What is a &apos;Drush make workflow&apos;?</h1>
 <p>It&apos;s common practice when developing Drupal websites to simply add the Drupal core codebase to a repository, and then start building from there. Contrib modules, libraries, patches, and custom code files are then added into the Drupal file system, and committed directly into the repository.</p>
-<p>The Drush make workflow takes a different approach. Instead of working with Drupal core&apos;s codebase directly, one would define the site&apos;s dependencies, and a Drupal core version in a make file. Then, when instructed, Drush make would scaffold out a Drupal site root, and add the contrib projects specified in the make file.  Then custom code is added to the freshly scaffolded Drupal file system, and then finally Drupal can be installed in a LAMP stack that has access to the codebase. The process for adding or changing contrib projects involves changing your make file, and re-running Drush make.</p>
+<p>The Drush make workflow takes a different approach. Instead of working with Drupal core&apos;s codebase directly, one defines the site&apos;s dependencies and a Drupal core version in a make file. Then, when instructed, Drush make will scaffold out a Drupal site root and add the contrib projects specified in the make file. Custom code is then added to the freshly scaffolded Drupal file system. Finally, Drupal can be installed in a LAMP stack that has access to the codebase. The process for adding or changing contrib projects involves changing your make file and re-running Drush make.</p>
 <h1 id="why-use-a-drush-make-workflow">Why use a Drush make workflow?</h1>
 <p>Although working with Drush make initially sounds complex, there are a number of benefits to using the Drush make workflow to construct Drupal sites.</p>
 <h2 id="clean-source-repositories">Clean source repositories</h2>
 <p>As opposed to committing core, contrib, library, and patch code files into a repository, Drush make manages dependencies with a make file. Non-custom dependencies are never added to the codebase, only specified as a dependency at a version.</p>
 <h2 id="clear-dependency-versioning">Clear dependency versioning</h2>
-<p>In the Drush make workflow, all dependencies are defined in a make file. This makes it easy to see what dependencies are being added to your site, and what version of the dependencies you&apos;re requiring.</p>
+<p>In the Drush make workflow, all dependencies are defined in a make file. This makes it easy to see what dependencies are being added to your site, and what version of those dependencies you&apos;re requiring.</p>
 <h2 id="easier-updates-and-patches">Easier updates and patches</h2>
-<p>Updating dependencies, applying patches, installing and updating libraries, and adding new dependencies is much easier and more directly manageable when using a Drush make workflow. Instead of manually performing those tasks, you simply need to tell Drush make where to get the dependencies, and what version you want. It handles the rest. Updating dependency versions is also a simple task. Simply increment or decrement the dependency version, and rebuild the site root.</p>
+<p>Updating dependencies, applying patches, installing and updating libraries, and adding new dependencies is much easier and more directly manageable when using a Drush make workflow. Instead of manually performing those tasks, you simply need to tell Drush make where to get the dependencies, and what version you want. It handles the rest. Updating dependency versions is also a simple task: Simply increment or decrement the dependency version, and rebuild the site root.</p>
 <h2 id="ensured-long-term-stability">Ensured long-term stability</h2>
 <p>When using a Drush make workflow, every time you update a dependency version, or add a patch, or remove something from the codebase, the site is reconstructed with the new dependency settings. This means that if a dependency introduces problem, or a patch no longer applies with an update, the build will fail before critical problems are introduced into the site.</p>
 
