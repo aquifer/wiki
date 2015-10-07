@@ -13,7 +13,7 @@ As opposed to committing core, contrib, library, and patch code files into a rep
 In the Drush make workflow, all dependencies are defined in a make file. This makes it easy to see what dependencies are being added to your site, and what version of the dependencies you're requiring.
 
 ## Easier updates and patches
-Updating dependencies, applying patches, installing and updating libraries, and adding new dependencies is much easier and more directly manageable when using a Drush make workflow. Instead if manually performing those tasks, you simply need to tell Drush make where to get the dependencies, and what version you want. It handles the rest. Updating dependency versions is also a simple task. Simply increment or decrement the dependency version, and rebuild the site root.
+Updating dependencies, applying patches, installing and updating libraries, and adding new dependencies is much easier and more directly manageable when using a Drush make workflow. Instead of manually performing those tasks, you simply need to tell Drush make where to get the dependencies, and what version you want. It handles the rest. Updating dependency versions is also a simple task. Simply increment or decrement the dependency version, and rebuild the site root.
 
 ## Ensured long-term stability
 When using a Drush make workflow, every time you update a dependency version, or add a patch, or remove something from the codebase, the site is reconstructed with the new dependency settings. This means that if a dependency introduces problem, or a patch no longer applies with an update, the build will fail before critical problems are introduced into the site.
