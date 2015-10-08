@@ -12,9 +12,11 @@ This is the wiki contains documentation for the [Aquifer](https://github.com/aqu
 * [Quick-start guide](sections/quickstart-guide.md)
 * [Installation](sections/installing-aquifer.md)
 * [Scaffold system](sections/scaffold-system.md)
+  * [Directory structure](sections/directory-structure.md)
   * [Project API](sections/project-api.md)
 * [Build system](sections/build-system.md)
   * [Build API](sections/build-api.md)
+
 
 
 ## Contributing
