@@ -8,6 +8,9 @@ The Aquifer CLI includes a `build` tool, which uses the `drupal.make` file to co
 * `aquifer build --make|-m` - Builds off of the Drush make file, ignores any Drush make lock files.
 * `aquifer build --refresh-lock|-r` - Builds and generates an updated lock file.
 
+## Customizing the build directory
+The directory that Aquifer builds into can be configured by editing the `"build"` property in the `aquifer.json` file. The value of that property should be a path, and can be relative to the project directory, or an absolute path (for example, `build`, or `/var/www/drupal`).
+
 ## Locking dependencies
 Aquifer is able to utilize Drush make lock files to ensure that everyone on your team is building with the same dependencies and versions. By default, this is turned off in Aquifer because of various bugs and issues that exist in Drush's locking utilities between Drush versions. 
 

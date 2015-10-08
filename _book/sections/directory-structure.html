@@ -5,7 +5,7 @@
         
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <title>Quick-start guide | Introduction to Aquifer</title>
+        <title>Directory structure | Introduction to Aquifer</title>
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="generator" content="GitBook 2.4.3">
@@ -29,10 +29,10 @@
         
     
     
-    <link rel="next" href="../sections/installing-aquifer.html" />
+    <link rel="next" href="../sections/build-system.html" />
     
     
-    <link rel="prev" href="../sections/what-is-aquifer.html" />
+    <link rel="prev" href="../sections/scaffold-system.html" />
     
 
         
@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="3" data-basepath=".." data-revision="Thu Oct 08 2015 12:28:48 GMT-0500 (CDT)">
+    <div class="book" data-level="5.1" data-basepath=".." data-revision="Thu Oct 08 2015 12:28:48 GMT-0500 (CDT)">
     
 
 <div class="book-summary">
@@ -101,7 +101,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="3" data-path="sections/quickstart-guide.html">
+        <li class="chapter " data-level="3" data-path="sections/quickstart-guide.html">
             
                 
                     <a href="../sections/quickstart-guide.html">
@@ -147,7 +147,7 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="5.1" data-path="sections/directory-structure.html">
+        <li class="chapter active" data-level="5.1" data-path="sections/directory-structure.html">
             
                 
                     <a href="../sections/directory-structure.html">
@@ -308,45 +308,39 @@
                 
                     <section class="normal" id="section-">
                     
-                        <h1 id="quick-start-guide">Quick-start guide</h1>
-<p>You can easily get started using Aquifer with just a couple commands.</p>
-<h2 id="1-install-aquifer">1. Install Aquifer</h2>
-<p>Aquifer is an npm module, and can be installed by running:</p>
-<pre><code class="lang-bash">npm <span class="token function">install</span> <span class="token operator">-</span>g aquifer
-</code></pre>
-<h2 id="2-create-an-aquifer-project">2. Create an Aquifer project</h2>
-<p>To create a Aquifer-based Drupal project, run:</p>
-<pre><code class="lang-bash">aquifer create my_project_name
-</code></pre>
-<p>This command uses Aquifer&apos;s project scaffolding API to create a directory that holds all the files and folders for your project. It also creates an <code>aquifer.json</code> file, which contains settings and config for Aquifer.</p>
-<h2 id="3-building-a-drupal-site">3. Building a Drupal site</h2>
-<p>Aquifer has a system that constructs a Drupal site root from a Drush make file, settings files, and custom code. This can be invoked by running: </p>
-<pre><code class="lang-bash">aquifer build
-</code></pre>
-<p>The directory that Aquifer builds into can be configured by editing the <code>&quot;build&quot;</code> property in the <code>aquifer.json</code> file. The value of that property should be a path, and can be relative to the project directory, or an absolute path (for example, <code>build</code>, or <code>/var/www</code>).</p>
-<h2 id="4-adding-contrib-code">4. Adding contrib code</h2>
-<p>To add contrib modules to your project, simply edit the <code>drupal.make.yml</code> file and add your contrib modules there. To learn more about Drush make, see the <a href="http://www.drush.org/en/master/make" target="_blank">these docs</a>.</p>
-<p>Aquifer makes optional use of Drush make lock files. If you make a change to <code>drupal.make.yml</code> after you&apos;ve already built your site, you&apos;ll need to add the --refresh-lock flag to the aquifer build command so that the lock file is recalculated when your site root is constructed.</p>
-<h2 id="5-adding-custom-code">5. Adding custom code.</h2>
-<p>Custom themes should be added to the <code>themes</code> folder within the Aquifer root, and likewise custom modules should be added to the <code>modules/custom</code> folder, or <code>modules/features</code> folder if the custom module is a feature. When you build the site, Aquifer will symlink those files into your site root.</p>
-<h2 id="6-installing-removing-and-loading-extensions">6. Installing, removing, and loading extensions.</h2>
-<p>Installing extensions is very simple. You can add extensions from local directories, git repositories, or from the npm repository.</p>
-<h3 id="installing-from-npm">Installing from npm</h3>
-<pre><code class="lang-bash">aquifer extension<span class="token operator">-</span>add extension<span class="token operator">-</span>name
-</code></pre>
-<h3 id="installing-from-git">Installing from git</h3>
-<p>Installing from sources that are <em>not</em> npm require you to use the <code>-s</code> source flag.</p>
-<pre><code class="lang-bash">aquifer extension<span class="token operator">-</span>add extension<span class="token operator">-</span>name <span class="token operator">-</span>s <span class="token function">git</span><span class="token operator">+</span><span class="token function">ssh</span><span class="token punctuation">:</span><span class="token operator">/</span><span class="token operator">/</span><span class="token function">git</span>@github<span class="token punctuation">.</span>com<span class="token operator">/</span>username<span class="token operator">/</span>reponame
-</code></pre>
-<h3 id="installing-from-local-filesystem">Installing from local filesystem</h3>
-<p>You could even write an Aquifer extension and store it in your project if you wanted to.</p>
-<pre><code class="lang-bash">aquifer extension<span class="token operator">-</span>add extension<span class="token operator">-</span>name <span class="token operator">-</span>s <span class="token operator">/</span>path<span class="token operator">/</span>to<span class="token operator">/</span>extension<span class="token operator">-</span>name
-</code></pre>
-<h3 id="loading-extensions">Loading extensions</h3>
-<p>Aquifer will load all of the extensions specified in the <code>aquifer.json</code> file when this command is run:</p>
-<pre><code class="lang-bash">aquifer extensions<span class="token operator">-</span>load
-</code></pre>
-<p>Extensions are not checked into repositories, so this is useful when you have multiple people working on a project. If one adds an extension, the others can load the extensions in. Aquifer will notify you when you have extensions that are installed but not downloaded locally.</p>
+                        <h1 id="directory-structure">Directory structure</h1>
+<p>Your Aquifer projects will contain the following directories by default:</p>
+<h2 id="-settings"><code>/settings</code></h2>
+<p>Contains settings.php files that will be placed into the Drupal <code>/sites/default</code> directory in the build. It will contain the following files:</p>
+<ul>
+<li><code>settings.php</code>: Contains master module configuration and any other configuration that will be common to all environments for the site. This file will be under version control so do not put sensitive or local environment information in it.</li>
+<li><code>secret.settings.php</code>: Contains database settings for the environment and any other sensitive configuration settings. <strong>Important</strong>: Be sure to configure your database settings in this file before you build your project. This file will not be under version control for security reasons.</li>
+<li><code>local.settings.php</code>: Contains local configuration overrides for the current environment. This file will not be under version control as it contains environment specific settings.</li>
+</ul>
+<h2 id="-root"><code>/root</code></h2>
+<p>Holds files that will be placed into the Drupal root directory in the build. By default it will contain the following files:</p>
+<ul>
+<li><code>.htaccess</code>: This is Drupal&apos;s default .htaccess file. You can override it here and your changes will be incorporated into the build by overwriting the file installed by Drupal.</li>
+<li><code>robots.txt</code>: This is Drupal&apos;s default robots.txt file. You can override it here and your changes will be incorporated into the build by overwriting the file installed by Drupal.</li>
+<li>You can also add your own files, like site verification files for example, that will get placed into the Drupal root directory during the build.</li>
+</ul>
+<h2 id="-modules"><code>/modules</code></h2>
+<p>Contains custom modules and features for the site. It will contain the following subdirectories by default:</p>
+<ul>
+<li><code>/custom</code>: Should contain any custom modules you have developed for the site.</li>
+<li><code>/features</code>: Should contain any custom Features modules you have created for the site.</li>
+</ul>
+<h2 id="-themes"><code>/themes</code></h2>
+<p>Holds custom themes for the site. It will contain the following subdirectory by default:</p>
+<ul>
+<li><code>/custom</code>: Should contain any custom themes you have developed for the site.</li>
+</ul>
+<h2 id="-files"><code>/files</code></h2>
+<p>This directory is your files directory for Drupal and is symlinked to <code>/sites/default/files</code> in the build.</p>
+<h2 id="-build"><code>/build</code></h2>
+<p>Contains the Drupal installation generated by Aquifer when you run <code>aquifer build</code>. You should never modify files in this directory without the understanding that your changes will be temporary. They are not under version control and will also be overwritten the next time you build the project.</p>
+<h2 id="customizing-the-directory-structure">Customizing the directory structure</h2>
+<p>It should be noted that Aquifer&apos;s directory structure is completely configurable (see &apos;Using a config file&apos; section <a href="sections/scaffold-system.html">here</a>). The folders specified in this list are sensible defaults, but if you prefer a different structure, checkout the Scaffolding documentation.</p>
 
                     
                     </section>
@@ -357,10 +351,10 @@
         </div>
 
         
-        <a href="../sections/what-is-aquifer.html" class="navigation navigation-prev " aria-label="Previous page: What is Aquifer?"><i class="fa fa-angle-left"></i></a>
+        <a href="../sections/scaffold-system.html" class="navigation navigation-prev " aria-label="Previous page: Scaffold system"><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../sections/installing-aquifer.html" class="navigation navigation-next " aria-label="Next page: Installation"><i class="fa fa-angle-right"></i></a>
+        <a href="../sections/build-system.html" class="navigation navigation-next " aria-label="Next page: Build system"><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>

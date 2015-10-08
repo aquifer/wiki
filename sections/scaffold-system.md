@@ -1,7 +1,7 @@
 # Scaffolding system
 Aquifer ships with a highly-configurable scaffolding system that can create an Drush make Drupal workflow in a directory.
 
-## `aquifer create`
+## Using `aquifer create`
 The Aquifer CLI has a create command. When this command is run, it will create a directory, and scaffold a Drush make Drupal workflow in the folder. It takes one parameter, which should represent the machine name of your project. This command also allows you to pass in a config file that specifies how the project should be scaffolded.
 
 * `aquifer create --help` - Returns helpful documentation for this command.
