@@ -9,6 +9,13 @@ This is the wiki contains documentation for the [Aquifer](https://github.com/aqu
 ## Table of Contents
 * [What is a 'Drush make workflow'?](sections/what-is-a-drush-make-workflow.md)
 * [What is Aquifer?](sections/what-is-aquifer.md)
+* [Quick-start guide](sections/quickstart-guide.md)
+* [Installation](sections/installing-aquifer.md)
+* [Scaffold system](sections/scaffold-system.md)
+  * [Project API](sections/project-api.md)
+* [Build system](sections/build-system.md)
+  * [Build API](sections/build-api.md)
+
 
 ## Contributing
 Contributing to this wiki is painless. Everything is stored and served from the [Aquifer wiki](http://github.com/aquifer/wiki) repository.
