@@ -1,5 +1,13 @@
 # Installing Aquifer
 
+## Requirements
+Aquifer has one system requirement: Node.js. We suggest using [nvm](https://github.com/creationix/nvm) to install Node.js and npm:
+* `curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.28.0/install.sh | bash`
+* `nvm install stable`
+* `nvm use stable`
+* `nvm alias default stable`
+
+## Installation (npm)
 Aquifer is an npm module, and can be installed by running:
 
 ```bash
