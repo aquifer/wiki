@@ -1,8 +1,10 @@
 # Introduction to Aquifer
-This is the documentation for the [Aquifer](https://github.com/aquifer/aquifer) project:
+This is the wiki contains documentation for the [Aquifer](https://github.com/aquifer/aquifer) project.
 
-* [Github org](https://github.com/aquifer)
-* [Aquifer core](https://github.com/aquifer/aquifer)
+* [Aquifer GitHub org](https://github.com/aquifer)
+* [Aquifer core repository](https://github.com/aquifer/aquifer)
+* [Aquifer npm module](https://www.npmjs.com/package/aquifer)
+* [This wiki's repository](https://github.com/aquifer/wiki)
 
 ## Table of Contents
 * [What is a 'Drush make workflow'?](sections/what-is-a-drush-make-workflow.md)
