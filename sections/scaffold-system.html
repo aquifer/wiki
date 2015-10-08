@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="5" data-basepath=".." data-revision="Thu Oct 08 2015 10:28:25 GMT-0500 (CDT)">
+    <div class="book" data-level="5" data-basepath=".." data-revision="Thu Oct 08 2015 11:25:21 GMT-0500 (CDT)">
     
 
 <div class="book-summary">
@@ -144,6 +144,19 @@
                     </a>
             
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="sections/project-api.html">
+            
+            <span><b>5.1.</b> Project API</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="6" data-path="sections/build-system.html">
@@ -158,6 +171,19 @@
                         Build system
                     </a>
             
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="sections/build-api.html">
+            
+            <span><b>6.1.</b> Build API</span>
+            
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -268,6 +294,43 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="scaffolding-system">Scaffolding system</h1>
+<p>Aquifer ships with a highly-configurable scaffolding system that can create an Drush make Drupal workflow in a directory.</p>
+<h2 id="-aquifer-create"><code>aquifer create</code></h2>
+<p>The Aquifer CLI has a create command. When this command is run, it will create a directory, and scaffold a Drush make Drupal workflow in the folder. It takes one parameter, which should represent the machine name of your project. This command also allows you to pass in a config file that specifies how the project should be scaffolded.</p>
+<ul>
+<li><code>aquifer create --help</code> - Returns helpful documentation for this command.</li>
+<li><code>aquifer create my_project_name</code> - Creates a folder called <code>my_project_name</code> in the current working directory, and scaffolds a drush make Drupal site root.</li>
+<li><code>aquifer create my_project_name --config_file /path/to/config.json</code> - Creates a folder called <code>my_project_name</code> in the current working directory, and uses the <code>config.json</code> to determine the file structure that should be scaffolded.</li>
+</ul>
+<h3 id="using-a-config-file">Using a config file</h3>
+<p>As mentioned previously, <code>aquifer create</code> accepts a <code>--config_file</code> or <code>-c</code> flag that takes a path to a config JSON file.</p>
+<p>When supplied, this JSON file will be used to scaffold the project. File and folder names will be created based on what is specified in the passed-in file, allowing one to have complete control over the source tree structure of the entire project. Here&apos;s an example <code>config.json</code> file:</p>
+<pre><code class="lang-javascript"><span class="token punctuation">{</span>
+  <span class="token string">&quot;name&quot;</span><span class="token punctuation">:</span> <span class="token keyword">false</span><span class="token punctuation">,</span>
+  <span class="token string">&quot;paths&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token string">&quot;make&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;drupal.make.yml&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;lock&quot;</span><span class="token punctuation">:</span> <span class="token keyword">false</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;settings&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;settings&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;build&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;build&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;root&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;root&quot;</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;themes&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;root&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;themes&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;contrib&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;themes/contrib&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;custom&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;themes/custom&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;modules&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;root&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;modules&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;contrib&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;modules/contrib&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;custom&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;modules/custom&quot;</span><span class="token punctuation">,</span>
+      <span class="token string">&quot;features&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;modules/features&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">&quot;files&quot;</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token string">&quot;root&quot;</span><span class="token punctuation">:</span> <span class="token string">&quot;files&quot;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Any file paths or settings not provided in the passed-in config file will be created using Aquifer&apos;s defaults.</p>
 
                     
                     </section>
@@ -288,6 +351,10 @@
 
         
 <script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
 
 <script>
 require(["gitbook"], function(gitbook) {

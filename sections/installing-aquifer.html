@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="4" data-basepath=".." data-revision="Thu Oct 08 2015 10:28:25 GMT-0500 (CDT)">
+    <div class="book" data-level="4" data-basepath=".." data-revision="Thu Oct 08 2015 11:25:21 GMT-0500 (CDT)">
     
 
 <div class="book-summary">
@@ -144,6 +144,19 @@
                     </a>
             
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="sections/project-api.html">
+            
+            <span><b>5.1.</b> Project API</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="6" data-path="sections/build-system.html">
@@ -158,6 +171,19 @@
                         Build system
                     </a>
             
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="sections/build-api.html">
+            
+            <span><b>6.1.</b> Build API</span>
+            
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -268,6 +294,21 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="installing-aquifer">Installing Aquifer</h1>
+<p>Aquifer is an npm module, and can be installed by running:</p>
+<pre><code class="lang-bash">npm <span class="token function">install</span> <span class="token operator">-</span>g aquifer
+</code></pre>
+<h2 id="installing-for-development">Installing for development</h2>
+<p>You can install Aquifer directly from the git repository. This is useful if you want to contribute to Aquifer core, or test upcoming versions.</p>
+<ul>
+<li>Ensure that node.js is installed.<ul>
+<li>We suggest using <a href="https://github.com/creationix/nvm" target="_blank">nvm</a>.</li>
+<li>Be sure that your <code>NODE_PATH</code> environment variable is set correctly.</li>
+</ul>
+</li>
+<li>Clone this repository into any directory.</li>
+<li>Within the Aquifer repository directory, run <code>npm link</code>.</li>
+<li>Run <code>aquifer</code> in your terminal, and ensure that it returns CLI documentation.</li>
+</ul>
 
                     
                     </section>
@@ -288,6 +329,10 @@
 
         
 <script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
 
 <script>
 require(["gitbook"], function(gitbook) {
