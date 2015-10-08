@@ -38,7 +38,7 @@
     <body>
         
         
-    <div class="book" data-level="6" data-basepath=".." data-revision="Thu Oct 08 2015 10:28:25 GMT-0500 (CDT)">
+    <div class="book" data-level="6" data-basepath=".." data-revision="Thu Oct 08 2015 11:25:21 GMT-0500 (CDT)">
     
 
 <div class="book-summary">
@@ -142,6 +142,19 @@
                     </a>
             
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="sections/project-api.html">
+            
+            <span><b>5.1.</b> Project API</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter active" data-level="6" data-path="sections/build-system.html">
@@ -156,6 +169,19 @@
                         Build system
                     </a>
             
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="sections/build-api.html">
+            
+            <span><b>6.1.</b> Build API</span>
+            
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -266,6 +292,19 @@
                     <section class="normal" id="section-">
                     
                         <h1 id="build-system">Build system</h1>
+<p>The Aquifer CLI includes a <code>build</code> tool, which uses the <code>drupal.make</code> file to construct a Drupal site root in a working directory.</p>
+<h2 id="using-aquifer-build">Using <code>aquifer build</code></h2>
+<ul>
+<li><code>aquifer build --help</code> - Returns documentation for this command.</li>
+<li><code>aquifer build</code> - Constructs a Drupal site root in the build directory specified in the value of the <code>&quot;build&quot;</code> property in <code>aquifer.json</code>.</li>
+<li><code>aquifer build --make|-m</code> - Builds off of the Drush make file, ignores any Drush make lock files.</li>
+<li><code>aquifer build --refresh-lock|-r</code> - Builds and generates an updated lock file.</li>
+</ul>
+<h2 id="locking-dependencies">Locking dependencies</h2>
+<p>Aquifer is able to utilize Drush make lock files to ensure that everyone on your team is building with the same dependencies and versions. By default, this is turned off in Aquifer because of various bugs and issues that exist in Drush&apos;s locking utilities between Drush versions. </p>
+<p>To opt into locking, simple change the <code>&quot;lock&quot;</code> property in <code>aquifer.json</code> from <code>false</code> to the name of the lock file you would like to use, like <code>drush.make.lock</code>.</p>
+<p>After enabling locking, when you run <code>aquifer build</code> for the first time, you will notice that a lock file is generated in your project root. This file will contain fully resolved versions of the contrib projects defined in your make file and will be used to determine dependency versions for subsequent builds.</p>
+<p>Note: You must be using drush version 7 for lock file support to work. If you are using a lesser version and are unable to update drush for some reason or just plain don&apos;t like any of this lock file business, you can turn off this behavior by setting <code>&quot;lock&quot;</code> to <code>false</code> in the <code>aquifer.json</code> file.</p>
 
                     
                     </section>
@@ -284,6 +323,10 @@
 
         
 <script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
 
 <script>
 require(["gitbook"], function(gitbook) {

@@ -5,4 +5,7 @@
 * [Quick-start guide](sections/quickstart-guide.md)
 * [Installation](sections/installing-aquifer.md)
 * [Scaffold system](sections/scaffold-system.md)
+  * [Project API](sections/project-api.md)
 * [Build system](sections/build-system.md)
+  * [Build API](sections/build-api.md)
+
