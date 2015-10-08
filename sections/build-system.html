@@ -30,7 +30,7 @@
     
     
     
-    <link rel="prev" href="../sections/scaffold-system.html" />
+    <link rel="prev" href="../sections/directory-structure.html" />
     
 
         
@@ -38,7 +38,7 @@
     <body>
         
         
-    <div class="book" data-level="6" data-basepath=".." data-revision="Thu Oct 08 2015 11:34:20 GMT-0500 (CDT)">
+    <div class="book" data-level="6" data-basepath=".." data-revision="Thu Oct 08 2015 12:28:48 GMT-0500 (CDT)">
     
 
 <div class="book-summary">
@@ -145,9 +145,24 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="5.1" data-path="sections/project-api.html">
+        <li class="chapter " data-level="5.1" data-path="sections/directory-structure.html">
             
-            <span><b>5.1.</b> Project API</span>
+                
+                    <a href="../sections/directory-structure.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        Directory structure
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="sections/project-api.html">
+            
+            <span><b>5.2.</b> Project API</span>
             
             
         </li>
@@ -300,6 +315,8 @@
 <li><code>aquifer build --make|-m</code> - Builds off of the Drush make file, ignores any Drush make lock files.</li>
 <li><code>aquifer build --refresh-lock|-r</code> - Builds and generates an updated lock file.</li>
 </ul>
+<h2 id="customizing-the-build-directory">Customizing the build directory</h2>
+<p>The directory that Aquifer builds into can be configured by editing the <code>&quot;build&quot;</code> property in the <code>aquifer.json</code> file. The value of that property should be a path, and can be relative to the project directory, or an absolute path (for example, <code>build</code>, or <code>/var/www/drupal</code>).</p>
 <h2 id="locking-dependencies">Locking dependencies</h2>
 <p>Aquifer is able to utilize Drush make lock files to ensure that everyone on your team is building with the same dependencies and versions. By default, this is turned off in Aquifer because of various bugs and issues that exist in Drush&apos;s locking utilities between Drush versions. </p>
 <p>To opt into locking, simple change the <code>&quot;lock&quot;</code> property in <code>aquifer.json</code> from <code>false</code> to the name of the lock file you would like to use, like <code>drush.make.lock</code>.</p>
@@ -315,7 +332,7 @@
         </div>
 
         
-        <a href="../sections/scaffold-system.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Scaffold system"><i class="fa fa-angle-left"></i></a>
+        <a href="../sections/directory-structure.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Directory structure"><i class="fa fa-angle-left"></i></a>
         
         
     </div>
