@@ -40,7 +40,7 @@
     <body>
         
         
-    <div class="book" data-level="3" data-basepath=".." data-revision="Thu Oct 08 2015 12:32:15 GMT-0500 (CDT)">
+    <div class="book" data-level="3" data-basepath=".." data-revision="Fri Oct 09 2015 11:11:26 GMT-0500 (CDT)">
     
 
 <div class="book-summary">
@@ -324,6 +324,9 @@
 <pre><code class="lang-bash">aquifer build
 </code></pre>
 <p>The directory that Aquifer builds into can be configured by editing the <code>&quot;build&quot;</code> property in the <code>aquifer.json</code> file. The value of that property should be a path, and can be relative to the project directory, or an absolute path (for example, <code>build</code>, or <code>/var/www</code>).</p>
+<h3 id="overriding-aquifer-json-locally">Overriding <code>aquifer.json</code> locally</h3>
+<p>Any property in <code>aquifer.json</code> can be overridden locally without modifying <code>aquifer.json</code>. For instance, the build directory is highly relative to the environment in which Aquifer is building.</p>
+<p>To override properties, create an <code>aquifer.local.json</code> file, and set any properties with the values you want. They will automatically take presidence over the values specified in<code>aquifer.json</code>.</p>
 <h2 id="4-adding-contrib-code">4. Adding contrib code</h2>
 <p>To add contrib modules to your project, simply edit the <code>drupal.make.yml</code> file and add your contrib modules there. To learn more about Drush make, see the <a href="http://www.drush.org/en/master/make" target="_blank">these docs</a>.</p>
 <p>Aquifer makes optional use of Drush make lock files. If you make a change to <code>drupal.make.yml</code> after you&apos;ve already built your site, you&apos;ll need to add the --refresh-lock flag to the aquifer build command so that the lock file is recalculated when your site root is constructed.</p>
@@ -367,6 +370,10 @@
 
         
 <script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
 
 <script>
 require(["gitbook"], function(gitbook) {
