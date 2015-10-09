@@ -29,7 +29,7 @@ The directory that Aquifer builds into can be configured by editing the `"build"
 ### Overriding `aquifer.json` locally
 Any property in `aquifer.json` can be overridden locally without modifying `aquifer.json`. For instance, the build directory is highly relative to the environment in which Aquifer is building.
 
-To override properties, create an `aquifer.local.json` file in the root of your Aquifer project, and set any properties with the values you want. They will automatically take presidence over the values specified in `aquifer.json`.
+To override properties, create an `aquifer.local.json` file in the root of your Aquifer project, and set any properties with the values you want. They will automatically take presidence over the values specified in `aquifer.json`. Note that only properties you want to override should be added to `aquifer.local.json`, as this file does not replace the main `aquifer.json` file entirely, but only overrides the values assigned to properties it contains.
 
 ## 4. Adding contrib code
 To add contrib modules to your project, simply edit the `drupal.make.yml` file and add your contrib modules there. To learn more about Drush make, see the [these docs](http://www.drush.org/en/master/make).
