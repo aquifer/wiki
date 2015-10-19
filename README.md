@@ -32,5 +32,7 @@ All pages are stored in the `/sections` folder, and added to the `SUMMARY.md` fi
 This wiki uses gitbooks to compile the markdown files into a collection of browser-friendly pages. To compile the markdown:
 
 * Install gitbook: `npm install gitbook-cli -g`.
-* In the wiki directory, run `gitbook build`.
+* In the wiki directory, run `gitbook install`.
+* To build the project, in the wiki directory, run `gitbook build`.
 * If you would like to locally test the compiled output, run `gitbook serve`, and point your browser at `http://localhost:4000`.
+* NOTE: Gitbooks will remove the CNAME file in the `_book` directory. Do not commit this change.
