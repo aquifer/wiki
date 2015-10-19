@@ -38,7 +38,7 @@
     <body>
         
         
-    <div class="book" data-level="0" data-basepath="." data-revision="Fri Oct 09 2015 11:25:40 GMT-0500 (CDT)">
+    <div class="book" data-level="0" data-basepath="." data-revision="Mon Oct 19 2015 15:13:10 GMT-0500 (CDT)">
     
 
 <div class="book-summary">
@@ -343,8 +343,10 @@ All pages are stored in the <code>/sections</code> folder, and added to the <cod
 <p>This wiki uses gitbooks to compile the markdown files into a collection of browser-friendly pages. To compile the markdown:</p>
 <ul>
 <li>Install gitbook: <code>npm install gitbook-cli -g</code>.</li>
-<li>In the wiki directory, run <code>gitbook build</code>.</li>
+<li>In the wiki directory, run <code>gitbook install</code>.</li>
+<li>To build the project, in the wiki directory, run <code>gitbook build</code>.</li>
 <li>If you would like to locally test the compiled output, run <code>gitbook serve</code>, and point your browser at <code>http://localhost:4000</code>.</li>
+<li>NOTE: Gitbooks will remove the CNAME file in the <code>_book</code> directory. Do not commit this change.</li>
 </ul>
 
                     
