@@ -1,5 +1,4 @@
 # Directory structure
-
 Your Aquifer projects will contain the following directories by default:
 
 ## `/settings`
